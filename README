@@ -1,0 +1,31 @@
+# set some environment variables
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$XDG_CONFIG_HOME/.local/share"
+export XDG_CACHE_HOME="$XDG_CONFIG_HOME/.cache"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+- Clone repo and then link .config to your ~/.config directory.
+- Update .gitconfig for username etc.
+- Update/create .gemrc, .npmrc etc.
+
+1. Install Prezto as intended.
+	https://github.com/sorin-ionescu/prezto
+2. Symlink .zshenv to home dir.
+3. Make sure you load the .aliases file into the .zshrc
+
+- Things should auto install with Lazy, but if not , use :Lazy
+  - If there is an issue, rm -rf ~/.local/share/nvim and ~/.cache/nvim folders
+  - Then recompile / install.
+
+Additional Commands:
+- `gr` - Find all occurences of item under cursor
+- `gd` - Go to definition.
+- 'prefix-x' - Kill the pane in the tmux session list.
+- 'prefix-,' - rename the current pane
+- 'prefix-c' - create new pane
+
