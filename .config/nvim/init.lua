@@ -3,6 +3,10 @@ require('custom.commands.autosave')
 
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
+vim.opt.termguicolors = true
+vim.opt.incsearch = true
+vim.opt.isfname:append("@-@")
+
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -28,9 +32,6 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
-  -- Git related plugins
-  -- 'tpope/vim-fugitive',
-  -- 'tpope/vim-rhubarb',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -93,20 +94,6 @@ require('lazy').setup({
       end,
     },
   },
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = true,
-        theme = 'nightfly',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -209,6 +196,7 @@ vim.o.termguicolors = true
 
 vim.o.swapfile = false
 vim.o.colorcolumn = "80"
+vim.cmd 'hi colorcolumn guibg=#00264d'
 vim.o.number = true
 vim.o.relativenumber = true
 -- [[ Basic Keymaps ]]
@@ -217,7 +205,7 @@ vim.o.relativenumber = true
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Remap for dealing with word wrap
+-- Remap for dealing with word wrap:
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
