@@ -10,7 +10,9 @@ return {
         gitsigns = true,
         neogit = true,
         neotree = true,
-        telescope = true,
+        telescope = {
+          enabled = true,
+        },
         treesitter = true,
         which_key = true,
       }

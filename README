@@ -5,6 +5,7 @@
 1. Install Prezto as intended.
 	https://github.com/sorin-ionescu/prezto
 2. Symlink .zshenv to home dir.
+3. Add ```zstyle ':prezto:module:prompt' theme 'powerlevel10k'``` to your .zpreztorc
 
 - Things should auto install with Lazy, but if not , use :Lazy
   - If there is an issue, rm -rf ~/.local/share/nvim and ~/.cache/nvim folders

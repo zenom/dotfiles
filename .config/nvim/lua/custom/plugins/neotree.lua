@@ -14,9 +14,9 @@ return {
         position = 'float',
         width = 20,
         mappings = {
-          ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
-          ['b'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
-          ['g'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
+          ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem float', true) end,
+          ['b'] = function() vim.api.nvim_exec('Neotree focus buffers float', true) end,
+          ['g'] = function() vim.api.nvim_exec('Neotree focus git_status float', true) end,
         }
       },
       filesystem = {
