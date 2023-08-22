@@ -1,13 +1,20 @@
 return {
-  'bluz71/vim-nightfly-colors',
-  lazy = false,
-  enabled = true,
+  "catppuccin/nvim",
+  name = "catppuccin",
+  priority = 1000,
   config = function()
-    vim.g.nightflyItalics = true
-    vim.g.nightflyCursorColor = true
-    vim.g.nightflyUndercurls = true
-    vim.g.nightflyUnderlineMatchParen = true
-    vim.g.nightflyTransparent = true
-    vim.cmd.colorscheme 'nightfly'
+    require('catppuccin').setup({
+      transparent_background = true,
+      term_colors = true,
+      integrations = {
+        gitsigns = true,
+        neogit = true,
+        neotree = true,
+        telescope = true,
+        treesitter = true,
+        which_key = true,
+      }
+    })
+    vim.cmd.colorscheme 'catppuccin'
   end
 }

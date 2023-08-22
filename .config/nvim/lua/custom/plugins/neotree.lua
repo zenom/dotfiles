@@ -11,8 +11,8 @@ return {
     require('neo-tree').setup({
       enable_git_status = false,
       window = {
-        position = 'left',
-        width = 40,
+        position = 'float',
+        width = 20,
         mappings = {
           ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
           ['b'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
