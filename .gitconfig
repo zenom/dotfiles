@@ -39,7 +39,7 @@
 [hub]
   protocol = https
 [github]
-  user = zenom
+  user = ###
 [diff]
   tool = nvimdiff
 [difftool "nvimdiff"]
