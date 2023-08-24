@@ -1,3 +1,6 @@
+This was pulled together over years of using vim and what I like to use.  I have borrowed things from a ton
+of repos to get some stuff working with Yabai etx., 
+
 - Clone repo and then link .config to your ~/.config directory.
 - Update .gitconfig for username etc.
 - Update/create .gemrc, .npmrc etc.
