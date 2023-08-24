@@ -7,6 +7,9 @@ I have borrowed things from a ton of repos to get some stuff working with Yabai 
 - Kitty for terminal with Catppuccin theme. 
 - Neovim, kickstart, nvim-autopairs, formatter.nvim, lualine, neogit, neotree,
   nvim-surround, catppuccin theme, vimtest and yanky. 
+  - Leader is ','.
+  - which key is installed as well to help.
+  - There are also some telescope commands to find rails specific files in dirs.
 - tmux with catppuccin theme. 
 - homebrew - which also has a brewfile where you can use `brew bundle` to
   install and keep things up to date.
