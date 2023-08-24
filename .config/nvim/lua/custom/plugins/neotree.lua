@@ -11,10 +11,10 @@ return {
     require('neo-tree').setup({
       enable_git_status = false,
       window = {
-        position = 'float',
+        position = 'bottom',
         width = 20,
         mappings = {
-          ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem float', true) end,
+          ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem bottom', true) end,
           ['b'] = function() vim.api.nvim_exec('Neotree focus buffers float', true) end,
           ['g'] = function() vim.api.nvim_exec('Neotree focus git_status float', true) end,
         }
