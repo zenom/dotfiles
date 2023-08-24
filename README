@@ -1,6 +1,23 @@
 This was pulled together over years of using vim and what I like to use.  
 I have borrowed things from a ton of repos to get some stuff working with Yabai etx., 
 
+## Details 
+- I run a Lulu keyboad by BoardSource, with a custom mapping running Colemak DHm.
+- Yabai / SKHD for window management.
+- Kitty for terminal with Catppuccin theme. 
+- Neovim, kickstart, nvim-autopairs, formatter.nvim, lualine, neogit, neotree,
+  nvim-surround, catppuccin theme, vimtest and yanky. 
+- tmux with catppuccin theme. 
+- homebrew - which also has a brewfile where you can use `brew bundle` to
+  install and keep things up to date.
+
+
+NOTE: You will also see in my kitty config, I use ComicCode or Monolisa, you
+can replace this with any font you wish.  These are pay fonts and are not 
+included in this repo. 
+
+## Install
+
 - Clone repo and then link .config to your ~/.config directory.
 - Update .gitconfig for username etc.
 - Update/create .gemrc, .npmrc etc.
@@ -9,6 +26,7 @@ I have borrowed things from a ton of repos to get some stuff working with Yabai 
 	https://github.com/sorin-ionescu/prezto
 2. Symlink .zshenv to home dir.
 3. Add ```zstyle ':prezto:module:prompt' theme 'powerlevel10k'``` to your .zpreztorc
+4. Run `p10k configure` to configure your shell prompt.
 
 - Things should auto install with Lazy, but if not , use :Lazy
   - If there is an issue, rm -rf ~/.local/share/nvim and ~/.cache/nvim folders
