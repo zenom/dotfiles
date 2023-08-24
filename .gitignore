@@ -51,3 +51,4 @@ config/**/*
 .config/zsh/.zshrc
 .config/tmux/plugins/**/*
 .config/brewfile/Brewfile.lock.json
+.config/spotify-tui
