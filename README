@@ -14,6 +14,14 @@ I have borrowed things from a ton of repos to get some stuff working with Yabai 
 - homebrew - which also has a brewfile where you can use `brew bundle` to
   install and keep things up to date.
 
+## Optional
+- Hide the menu bar and dock in the Desktop & Dock settings. 
+	- Also ensure only 'switch to Space with open windows for application' under Mission Control.
+- Setup Mission Control and add 6 desktops.
+	- Remove animation and set shortcuts for desktops.
+		- Accessibility, Display, Reduce Motion
+	- Keyboard, Shortcuts, Mission Control, check all of Mission Controls.
+
 
 NOTE: You will also see in my kitty config, I use ComicCode or Monolisa, you
 can replace this with any font you wish.  These are pay fonts and are not 

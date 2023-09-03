@@ -13,10 +13,16 @@ fi
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-export BREW_PATH='/opt/homebrew/bin/brew'
+if [[ $(uname -m) == 'arm64' ]]; then
+  export BREW_PATH='/opt/homebrew/bin/brew'
+else 
+  export BREW_PATH='/usr/local/bin/brew'
+fi
+
 export HOMEBREW_REPOSITORY=$(${BREW_PATH} --prefix)
 export HOMEBREW_CELLAR="${HOMEBREW_REPOSITORY}/Cellar";
 export PATH="$HOME/.local/bin:$HOMEBREW_REPOSITORY/bin:$HOMEBREW_REPOSITORY/sbin${PATH+:$PATH}";
+export PATH="$HOMEBREW_REPOSITORY/share/zsh/site-functions:${PATH+:$PATH}"
 export MANPATH="$HOMEBREW_REPOSITORY/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="$HOMEBREW_REPOSITORY/share/info:${INFOPATH:-}";
 export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims${PATH+:$PATH}"
@@ -29,8 +35,6 @@ export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
 export EDITOR="nvim"
 export VISUAL="nvim"
-
-export PATH=/opt/homebrew/share/zsh/site-functions/:$PATH
 
 . $(${BREW_PATH} --prefix)/opt/asdf/libexec/asdf.sh
 
