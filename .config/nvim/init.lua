@@ -103,10 +103,8 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    main = 'ibl',
+    opts = {},
   },
 
   -- "gc" to comment visual regions/lines
@@ -502,6 +500,7 @@ vim.keymap.set('n', '<leader>rv', "<cmd>:Telescope find_files search_dirs={'./ap
 vim.keymap.set('n', '<leader>rS', "<cmd>:Telescope find_files search_dirs={'./app/services'} theme=dropdown<CR>",
   { desc = 'Search [R]uby [S]ervices' })
 vim.keymap.set('n', ',,', '<cmd>:b#<CR>', { desc = 'Last buffer' })
+vim.keymap.set('n', '<leader>bh', '<cmd>:!htmlbeautifier %<CR>', { desc = '[B]eautify [H]TML' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
