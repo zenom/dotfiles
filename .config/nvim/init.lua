@@ -11,6 +11,7 @@ vim.opt.softtabstop = 2
 vim.opt.autoindent = true
 
 
+
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -94,7 +95,8 @@ require('lazy').setup({
         vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
         vim.keymap.set('n', '<leader>gb', require('gitsigns').blame_line, { buffer = bufnr, desc = '[G]git [B]lame' })
-        vim.keymap.set('n', '<leader>gbb', function() require('gitsigns').blame_line{full = true} end, { buffer = bufnr, desc = '[G]git [B]lame Full' })
+        vim.keymap.set('n', '<leader>gbb', function() require('gitsigns').blame_line { full = true } end,
+          { buffer = bufnr, desc = '[G]git [B]lame Full' })
       end,
     },
   },
@@ -237,6 +239,7 @@ require('telescope').setup {
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+pcall(require('telescope').load_extension, 'harpoon')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -499,8 +502,16 @@ vim.keymap.set('n', '<leader>rv', "<cmd>:Telescope find_files search_dirs={'./ap
   { desc = 'Search [R]uby [V]iews' })
 vim.keymap.set('n', '<leader>rS', "<cmd>:Telescope find_files search_dirs={'./app/services'} theme=dropdown<CR>",
   { desc = 'Search [R]uby [S]ervices' })
-vim.keymap.set('n', ',,', '<cmd>:b#<CR>', { desc = 'Last buffer' })
-vim.keymap.set('n', '<leader>bh', '<cmd>:!htmlbeautifier %<CR>', { desc = '[B]eautify [H]TML' })
+vim.keymap.set('n', '<leader>bh', '<cmd>:!htmlbeautifier %<CR>', { desc = '[B]eautify [HTML' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "ruby",
+  callback = function()
+    vim.lsp.start {
+      name = "rubocop",
+      cmd = { "bundle", "exec", "rubocop", "--lsp" },
+    }
+  end,
+})
