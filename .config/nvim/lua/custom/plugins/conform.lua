@@ -15,5 +15,8 @@ return {
         html = { 'htmlbeautifier' },
       },
     }
+    vim.keymap.set('n', '<leader>ff', function()
+      require('conform').format()
+    end, { desc = '[F]ormat [F]ile' })
   end,
 }
