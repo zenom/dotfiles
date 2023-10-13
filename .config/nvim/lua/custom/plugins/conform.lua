@@ -6,12 +6,12 @@ return {
         ruby = { 'rufo' }, --rubocop, standardrb, rufo
         eruby = { 'erb_format' },
         lua = { 'stylua' },
-        javascript = { { 'prettierd', 'prettier' } },
-        css = { { 'prettierd', 'prettier' } },
-        scss = { { 'prettierd', 'prettier' } },
-        json = { { 'prettierd', 'prettier' } },
-        yaml = { { 'prettierd', 'prettier' } },
-        markdown = { { 'prettierd', 'prettier' } },
+        javascript = { 'prettier' },
+        css = { 'prettier' },
+        scss = { 'prettier' },
+        json = { 'prettier' },
+        yaml = { 'prettier' },
+        markdown = { 'prettier' },
         html = { 'htmlbeautifier' },
       },
     }

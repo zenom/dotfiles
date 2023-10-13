@@ -12,7 +12,6 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost' }, {
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
   callback = function(args)
-    -- do not auto format erb, , use keymap
     if vim.bo.filetype == 'eruby' then
       return
     end
