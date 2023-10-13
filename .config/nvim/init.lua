@@ -503,15 +503,3 @@ vim.keymap.set('n', '<leader>rv', "<cmd>:Telescope find_files search_dirs={'./ap
 vim.keymap.set('n', '<leader>rS', "<cmd>:Telescope find_files search_dirs={'./app/services'} theme=dropdown<CR>",
   { desc = 'Search [R]uby [S]ervices' })
 vim.keymap.set('n', '<leader>bh', '<cmd>:!htmlbeautifier %<CR>', { desc = '[B]eautify [HTML' })
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "ruby",
-  callback = function()
-    vim.lsp.start {
-      name = "rubocop",
-      cmd = { "bundle", "exec", "rubocop", "--lsp" },
-    }
-  end,
-})

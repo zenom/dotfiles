@@ -42,3 +42,12 @@ included in this repo.
 - Things should auto install with Lazy, but if not , use :Lazy
   - If there is an issue, rm -rf ~/.local/share/nvim and ~/.cache/nvim folders
   - Then recompile / install.
+
+
+## Gems Installed
+- rufo
+- rubocop
+- erb-formatter
+
+## Other
+- `npm install jsonlint -g`
