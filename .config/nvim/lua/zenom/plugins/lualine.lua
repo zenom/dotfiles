@@ -8,4 +8,4 @@ return {
       options = { theme  = 'catppuccin' },
     }
   end
-  }
+}
