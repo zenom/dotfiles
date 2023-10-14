@@ -10,4 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require('lazy').setup('zenom.plugins')
+require("lazy").setup({ 
+  { import = "zenom.plugins" }, 
+  { import = "zenom.plugins.lsp" } 
+})
