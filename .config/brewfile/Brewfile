@@ -52,3 +52,5 @@ brew 'yabai'
 brew 'skhd'
 brew 'spotify-tui'
 brew 'go'
+brew 'tidy-html5'
+
