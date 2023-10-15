@@ -7,6 +7,7 @@ return {
 	},
 	keys = {
 		{ "<leader>e", vim.cmd.NvimTreeToggle },
+		{ "<leader>r", vim.cmd.NvimTreeRefresh },
 	},
 	config = function()
 		vim.g.loaded_netrw = 1
