@@ -5,10 +5,8 @@ I have borrowed things from a ton of repos to get some stuff working with Yabai 
 - I run a Lulu keyboad by BoardSource, with a custom mapping running Colemak DHm.
 - Yabai / SKHD for window management.
 - Kitty for terminal with Catppuccin theme. 
-- Neovim, kickstart, nvim-autopairs, formatter.nvim, lualine, neogit, neotree,
-  nvim-surround, catppuccin theme, vimtest and yanky. 
+- Neovim: See plugins directory for all the plugins
   - Leader is ','.
-  - which key is installed as well to help.
   - There are also some telescope commands to find rails specific files in dirs.
 - tmux with catppuccin theme. 
 - homebrew - which also has a brewfile where you can use `brew bundle` to
@@ -28,10 +26,10 @@ can replace this with any font you wish.  These are pay fonts and are not
 included in this repo. 
 
 ## Install
-
 - Clone repo and then link .config to your ~/.config directory.
 - Update .gitconfig for username etc.
 - Update/create .gemrc, .npmrc etc.
+- Symlink the files in shared/ to your main dev directory.
 
 1. Install Prezto as intended.
 	https://github.com/sorin-ionescu/prezto
@@ -42,3 +40,9 @@ included in this repo.
 - Things should auto install with Lazy, but if not , use :Lazy
   - If there is an issue, rm -rf ~/.local/share/nvim and ~/.cache/nvim folders
   - Then recompile / install.
+
+  ## gems 
+  - erb-formatter
+  - htmlbeautifier
+  - rufo
+  - rubocop
