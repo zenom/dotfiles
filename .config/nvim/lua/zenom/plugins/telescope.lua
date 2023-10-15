@@ -37,17 +37,6 @@ return {
 				require('telescope.builtin').diagnostics()
 			end,
 		},
-		-- {
-		-- 	'<leader>rm',
-		-- 	function()
-		-- 		require('telescope.builtin').find_files({
-		-- 			search_dirs = { './app/models' },
-		-- 			-- theme = 'dropdown',
-		-- 			-- shorten_path = true,
-		-- 			-- prompt = '~ Ruby Models ~',
-		-- 		})
-		-- 	end,
-		-- },
 		{
 			'<leader>rs',
 			function()
