@@ -6,11 +6,8 @@ return {
 	},
 	config = function()
 		require('refactoring').setup()
-		vim.keymap.set('x', '<leader>ri', function()
-			require('refactoring').refactor('Inline Variable')
-		end)
-		vim.keymap.set('x', '<leader>rm', function()
-			require('refactoring').refactor('Extract Function')
+		vim.keymap.set('x', '<leader>rf', function()
+			require('refactoring').select_refactor()
 		end)
 	end,
 }

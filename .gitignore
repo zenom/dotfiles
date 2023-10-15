@@ -53,3 +53,5 @@ config/**/*
 .config/brewfile/Brewfile.lock.json
 .config/spotify-tui
 .config/nvim/lazy-lock.json
+.config/configstore/
+.config/irb/
