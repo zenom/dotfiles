@@ -37,33 +37,6 @@ return {
 				require('telescope.builtin').diagnostics()
 			end,
 		},
-		{
-			'<leader>rs',
-			function()
-				require('telescope.builtin').find_files({
-					search_dirs = { './app/services' },
-					theme = 'dropdown',
-				})
-			end,
-		},
-		{
-			'<leader>rc',
-			function()
-				require('telescope.builtin').find_files({
-					search_dirs = { './app/controllers' },
-					theme = 'dropdown',
-				})
-			end,
-		},
-		{
-			'<leader>rv',
-			function()
-				require('telescope.builtin').find_files({
-					search_dirs = { './app/views' },
-					theme = 'dropdown',
-				})
-			end,
-		},
 	},
 	config = function()
 		local telescope = require('telescope')
@@ -78,7 +51,7 @@ return {
 			},
 		})
 		-- search ruby models
-		vim.keymap.set('n', '<leader>rm', function()
+		vim.keymap.set('n', '<leader>fm', function()
 			require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({
 				search_dirs = { vim.fn.getcwd() .. '/app/models/' },
 				path_display = { 'shorten' },
@@ -90,7 +63,7 @@ return {
 			}))
 		end, {})
 
-		vim.keymap.set('n', '<leader>rs', function()
+		vim.keymap.set('n', '<leader>fs', function()
 			require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({
 				search_dirs = { vim.fn.getcwd() .. '/app/services/' },
 				path_display = { 'shorten' },
@@ -101,7 +74,7 @@ return {
 				},
 			}))
 		end, {})
-		vim.keymap.set('n', '<leader>rv', function()
+		vim.keymap.set('n', '<leader>fv', function()
 			require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({
 				search_dirs = { vim.fn.getcwd() .. '/app/views/' },
 				path_display = { 'shorten' },
@@ -112,7 +85,7 @@ return {
 				},
 			}))
 		end, {})
-		vim.keymap.set('n', '<leader>rc', function()
+		vim.keymap.set('n', '<leader>fc', function()
 			require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({
 				search_dirs = { vim.fn.getcwd() .. '/app/controllers/' },
 				path_display = { 'shorten' },
@@ -123,7 +96,7 @@ return {
 				},
 			}))
 		end, {})
-		vim.keymap.set('n', '<leader>rt', function()
+		vim.keymap.set('n', '<leader>ft', function()
 			require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({
 				search_dirs = { vim.fn.getcwd() .. '/spec/', vim.fn.getcwd() .. '/test' },
 				path_display = { 'shorten', 3 },
