@@ -28,3 +28,4 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = "menuone,noselect"
 vim.o.scrolloff = 8
 vim.o.clipboard = "unnamedplus"
+vim.o.showtabline = 0

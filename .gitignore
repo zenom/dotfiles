@@ -52,3 +52,4 @@ config/**/*
 .config/tmux/plugins/**/*
 .config/brewfile/Brewfile.lock.json
 .config/spotify-tui
+.config/nvim/lazy-lock.json

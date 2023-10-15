@@ -26,7 +26,6 @@ return {
 				dotfiles = true,
 			},
 			on_attach = function(bufnr)
-				print("Yep this is loaded")
 				local function opts(desc)
 					return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 				end
