@@ -1,2 +1,3 @@
-quote_style :single
+quote_style  :single
+align_chained_calls true
 trailing_commas false
