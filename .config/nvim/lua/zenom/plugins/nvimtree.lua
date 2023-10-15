@@ -1,38 +1,54 @@
 return {
 	"nvim-tree/nvim-tree.lua",
-	version = "*",
-	lazy = false,
-	dependencies = {
-		"nvim-tree/nvim-web-devicons",
-	},
-	keys = {
-		{ "<leader>e", vim.cmd.NvimTreeToggle },
-		{ "<leader>r", vim.cmd.NvimTreeRefresh },
-	},
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
+		local nvimtree = require("nvim-tree")
+
+		-- recommended settings from nvim-tree documentation
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
-		vim.opt.termguicolors = true
 
-		require("nvim-tree").setup({
-			sort_by = "case_sensitive",
+		-- change color for arrows in tree to light blue
+		vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
+		vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
+
+		nvimtree.setup({
 			view = {
-				width = 30,
+				width = 35,
 			},
 			renderer = {
-				group_empty = true,
+				indent_markers = {
+					enable = true,
+				},
+				icons = {
+					glyphs = {
+						folder = {
+							arrow_closed = "", -- arrow when folder is closed
+							arrow_open = "", -- arrow when folder is open
+						},
+					},
+				},
+			},
+			actions = {
+				open_file = {
+					window_picker = {
+						enable = false,
+					},
+				},
 			},
 			filters = {
-				dotfiles = true,
+				custom = { ".DS_Store" },
 			},
-			on_attach = function(bufnr)
-				local function opts(desc)
-					return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-				end
-				local ok, api = pcall(require, "nvim-tree.api")
-				assert(ok, "api module is not found")
-				vim.keymap.set("n", "<CR>", api.node.open.tab_drop, opts("Tab drop"))
-			end,
+			git = {
+				ignore = false,
+			},
 		})
+
+		-- set keymaps
+		local keymap = vim.keymap -- for conciseness
+
+		keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>", {}) -- toggle file explorer
+		keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
+		keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
 	end,
 }
