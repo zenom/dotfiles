@@ -2,7 +2,6 @@ return {
 	'vim-test/vim-test',
 	dependencies = {
 		'preservim/vimux',
-		'christoomey/vim-tmux-navigator',
 	},
 	config = function()
 		vim.keymap.set('n', '<leader>tf', '<cmd>:TestFile<CR>', {})
