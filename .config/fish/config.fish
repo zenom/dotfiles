@@ -31,6 +31,6 @@ source $($BREW_PATH --prefix)/opt/asdf/libexec/asdf.fish
 starship init fish | source
 
 # local variables
-if test -f $HOME/.fish.local
-  source $HOME/.fish.local
+if test -f $HOME/.local.fish
+  source $HOME/.local.fish
 end
