@@ -19,7 +19,6 @@ set -gx HOMEBREW_CELLAR "$HOMEBREW_REPOSITORY/Cellar";
 set -gx PATH "$HOME/.local/bin:$HOMEBREW_REPOSITORY/bin:$HOMEBREW_REPOSITORY/sbin$PATH+:$PATH";
 set -gx MANPATH "$HOMEBREW_REPOSITORY/share/man$MANPATH+:$MANPATH:";
 set -gx INFOPATH "$HOMEBREW_REPOSITORY/share/info:$INFOPATH:-";
-set -gx PATH "$HOME/.asdf/bin:$HOME/.asdf/shims$PATH+:$PATH";
 set -gx XDG_CONFIG_HOME "$HOME/.config";
 set -gx XDG_DATA_HOME "$XDG_CONFIG_HOME/.local/share"
 set -gx XDG_CACHE_HOME "$XDG_CONFIG_HOME/.cache"

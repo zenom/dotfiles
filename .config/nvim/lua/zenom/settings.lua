@@ -9,6 +9,7 @@ vim.o.softtabstop = 2
 vim.o.tabstop = 2
 vim.o.expandtab = true
 vim.o.autoindent = true
+vim.o.smartindent = true
 vim.o.hlsearch = false
 vim.o.wrap = false
 vim.wo.signcolumn = 'yes'
