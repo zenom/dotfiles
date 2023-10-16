@@ -52,4 +52,5 @@ brew 'yabai'
 brew 'skhd'
 brew 'go'
 brew 'starship'
+brew 'fish'
 

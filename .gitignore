@@ -56,3 +56,4 @@ config/**/*
 .config/configstore/
 .config/irb/
 .config/zsh/.zcompdump
+.config/fish/fish_variables
