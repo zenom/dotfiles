@@ -13,4 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 	{ import = 'zenom.plugins' },
 	{ import = 'zenom.plugins.lsp' },
+}, {
+	change_detection = {
+		notify = false,
+		enabled = false,
+	},
+	checker = {
+		enabled = true,
+		notify = false,
+	},
 })
