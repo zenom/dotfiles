@@ -1,0 +1,5 @@
+[[language]]
+name = "ruby"
+config = { solargraph = { diagnostics = true, formatting = false } }
+formatter = { command = "rubocop", args = ["--stdin", "foo.rb", "-a", "--stderr", "--fail-level", "info"] }
+auto-format = true

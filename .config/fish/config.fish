@@ -33,3 +33,7 @@ starship init fish | source
 if test -f $HOME/.local.fish
   source $HOME/.local.fish
 end
+
+function fish_greeting
+  echo 'Would you like to play a game?'
+end
