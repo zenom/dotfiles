@@ -1,5 +1,9 @@
 [[language]]
-name = "ruby"
-config = { solargraph = { diagnostics = true, formatting = false } }
-formatter = { command = "rubocop", args = ["--stdin", "foo.rb", "-a", "--stderr", "--fail-level", "info"] }
+name = 'ruby'
+language-servers = ['solargraph']
+formatter = { command = "bundle", args = ["exec", "rubocop", "--stdin", "foo.rb", "-a", "--stderr", "--fail-level", "fatal"] }
 auto-format = true
+
+[language-server.solargraph.config]
+diagnostics = true
+formatting = false
