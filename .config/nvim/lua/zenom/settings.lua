@@ -30,3 +30,4 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.scrolloff = 8
 vim.o.clipboard = 'unnamedplus'
 vim.o.showtabline = 0
+vim.g.disable_autoformat = false
