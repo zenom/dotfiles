@@ -58,3 +58,4 @@ config/**/*
 .config/zsh/.zcompdump
 .config/fish/fish_variables
 .config/helix/runtime
+.config/spotify-player
