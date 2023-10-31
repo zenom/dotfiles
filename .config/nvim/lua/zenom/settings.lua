@@ -14,6 +14,7 @@ vim.o.hlsearch = false
 vim.o.wrap = false
 vim.wo.signcolumn = 'yes'
 vim.o.cursorline = true
+vim.o.background = 'dark'
 
 vim.o.incsearch = true
 vim.opt.isfname:append('@-@')
