@@ -8,7 +8,7 @@ return {
 		local lazy_status = require('lazy.status')
 
 		lualine.setup({
-			options = { theme = 'catppuccin' },
+			options = { theme = 'auto' },
 			sections = {
 				lualine_x = {
 					{
