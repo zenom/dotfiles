@@ -1,7 +1,7 @@
 -- Neovim settings.
 vim.o.termguicolors = true
 vim.o.swapfile = false
-vim.o.colorcolumn = '80'
+-- vim.o.colorcolumn = '80'
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.shiftwidth = 2
@@ -13,8 +13,9 @@ vim.o.smartindent = true
 vim.o.hlsearch = false
 vim.o.wrap = false
 vim.wo.signcolumn = 'yes'
-vim.o.cursorline = true
+vim.o.cursorline = false
 vim.o.background = 'dark'
+-- vim.cmd([[ highlight ColorColumn ctermbg=#000000 guibg=#000000 ]])
 
 vim.o.incsearch = true
 vim.opt.isfname:append('@-@')

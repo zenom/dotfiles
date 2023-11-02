@@ -1,44 +1,3 @@
--- return {
--- 	'catppuccin/nvim',
--- 	name = 'catppuccin',
--- 	priority = 1000,
--- 	config = function()
--- 		require('catppuccin').setup({
--- 			transparent_background = true,
--- 			term_colors = true,
--- 			integrations = {
--- 				cmp = true,
--- 				gitsigns = true,
--- 				nvimtree = true,
--- 				telescope = {
--- 					enabled = true,
--- 				},
--- 				treesitter = true,
--- 				dashboard = true,
--- 				native_lsp = {
--- 					enabled = true,
--- 					virtual_text = {
--- 						errors = { 'italic' },
--- 						hints = { 'italic' },
--- 						warnings = { 'italic' },
--- 						information = { 'italic' },
--- 					},
--- 					underlines = {
--- 						errors = { 'underline' },
--- 						hints = { 'underline' },
--- 						warnings = { 'underline' },
--- 						information = { 'underline' },
--- 					},
--- 					inlay_hints = {
--- 						background = true,
--- 					},
--- 				},
--- 			},
--- 		})
--- 		vim.cmd.colorscheme('catppuccin-frappe')
--- 	end,
--- }
-
 return {
 	'folke/tokyonight.nvim',
 	lazy = false,
@@ -49,6 +8,10 @@ return {
 		tokyo.setup({
 			transparent = true,
 			style = 'storm',
+			styles = {
+				sidebars = 'transparent',
+				floats = 'transparent',
+			},
 			on_highlights = function(hl, c)
 				local prompt = '#2d3149'
 				hl.TelescopeNormal = {
@@ -78,6 +41,9 @@ return {
 					bg = c.bg_dark,
 					fg = c.bg_dark,
 				}
+			end,
+			on_colors = function(colors)
+				colors.bg_statusline = 'NONE'
 			end,
 		})
 		vim.cmd([[colorscheme tokyonight]])
