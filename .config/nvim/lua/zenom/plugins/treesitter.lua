@@ -15,6 +15,7 @@ return {
 				'html',
 				'css',
 				'ruby',
+				'rust',
 			},
 			sync_install = false,
 			auto_install = true,

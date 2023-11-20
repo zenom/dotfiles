@@ -59,6 +59,28 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig['rust_analyzer'].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- lspconfig['fuzzy_ls'].setup({
+		-- 	on_attach = on_attach,
+		-- 	default_config = {
+		-- 		cmd = { 'fuzzy' },
+		-- 		filetypes = { 'ruby' },
+		-- 		root_dir = function(fname)
+		-- 			return lspconfig.util.find_git_ancestor(fname)
+		-- 		end,
+		-- 		settings = {},
+		-- 		init_options = {
+		-- 			allocationType = 'ram',
+		-- 			indexGems = true,
+		-- 			reportDiagnostics = true,
+		-- 		},
+		-- 	},
+		-- })
+
 		-- lspconfig['rubocop'].setup({
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
