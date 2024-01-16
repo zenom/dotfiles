@@ -8,6 +8,7 @@ vim.keymap.set('n', 'vv', vim.cmd.vsp) -- vertical split
 vim.keymap.set('n', 'ss', vim.cmd.sp) -- horizontal split
 vim.keymap.set('n', '<leader>se', '<C-w>=') -- make splits equal
 vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>') -- close current split
+vim.keymap.set('i', 'hh', '<Esc>', {})
 
 vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv') -- move lines up that are selected
 vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv') -- move lines down that are selected
