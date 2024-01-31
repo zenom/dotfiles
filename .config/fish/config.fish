@@ -59,7 +59,8 @@ set -g fish_pager_color_description $comment
 set -g fish_pager_color_selected_background --background=$selection
 
 # setup asdf
-source $($BREW_PATH --prefix)/opt/asdf/libexec/asdf.fish
+# source $($BREW_PATH --prefix)/opt/asdf/libexec/asdf.fish
+source ~/.asdf/asdf.fish
 
 # starship
 starship init fish | source

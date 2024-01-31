@@ -15,8 +15,7 @@ vim.o.wrap = false
 vim.wo.signcolumn = 'yes'
 vim.o.cursorline = false
 vim.o.background = 'dark'
--- vim.cmd([[ highlight ColorColumn ctermbg=#000000 guibg=#000000 ]])
-
+-- vim.cmd([[ highlight ColorColumn ctermbg=darkred guibg=darkred ]])
 vim.o.incsearch = true
 vim.opt.isfname:append('@-@')
 vim.wo.number = true

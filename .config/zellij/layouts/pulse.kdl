@@ -1,0 +1,38 @@
+
+layout {
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    };
+    tab name="Editor" focus=true {}; // the default_tab_template
+    tab name="Console/Sever/Logs" split_direction="horizontal" {
+      pane stacked=true {
+        pane { 
+          command "bin/rails"
+          args "c" 
+        }
+
+        pane { 
+          command "bin/rails"
+          args "s" 
+        }
+
+        pane { 
+          command "tail"
+          args "-f" "log/development.log"
+        }
+
+        pane { 
+          command "bin/rails"
+          args "jobs:work"
+        }
+      }
+    } // the default_tab_template with a custom tab name
+}
+
