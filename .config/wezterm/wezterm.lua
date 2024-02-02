@@ -12,11 +12,11 @@ if wezterm.config_builder then
 end
 
 -- For example, changing the color scheme:
-config.color_scheme = "TokyoNight"
+config.color_scheme = "catppuccin-mocha"
 
 config.font = wezterm.font("MonoLisa Nerd Font")
 config.font_size = 15
-config.window_background_opacity = 0.6
+config.window_background_opacity = 0.8
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.default_workspace = "pulse"
@@ -42,8 +42,7 @@ config.keys = {
 	{ key = "f", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
 	{ key = "r", mods = "LEADER", action = act.RotatePanes("Clockwise") },
 	{ key = "m", mods = "LEADER", action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
-  { key = "w", mods = "LEADER",       action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
-
+	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 	{
 		key = "e",
 		mods = "LEADER",
@@ -56,6 +55,30 @@ config.keys = {
 			action = wezterm.action_callback(function(window, pane, line)
 				if line then
 					window:active_tab():set_title(line)
+				end
+			end),
+		}),
+	},
+	{
+		key = "W",
+		mods = "LEADER",
+		action = act.PromptInputLine({
+			description = wezterm.format({
+				{ Attribute = { Intensity = "Bold" } },
+				{ Foreground = { AnsiColor = "Fuchsia" } },
+				{ Text = "Enter name for new workspace" },
+			}),
+			action = wezterm.action_callback(function(window, pane, line)
+				-- line will be `nil` if they hit escape without entering anything
+				-- An empty string if they just hit enter
+				-- Or the actual line of text they wrote
+				if line then
+					window:perform_action(
+						act.SwitchToWorkspace({
+							name = line,
+						}),
+						pane
+					)
 				end
 			end),
 		}),
@@ -94,7 +117,6 @@ config.key_tables = {
 -- style changes
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
-
 
 -- and finally, return the configuration to wezterm
 return config
