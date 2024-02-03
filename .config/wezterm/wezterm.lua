@@ -14,9 +14,10 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = "catppuccin-mocha"
 
-config.font = wezterm.font("MonoLisa Nerd Font")
+-- config.font = wezterm.font("MonoLisa Nerd Font")
+config.font = wezterm.font("Comic Code")
 config.font_size = 15
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.default_workspace = "pulse"
@@ -86,33 +87,33 @@ config.keys = {
 }
 
 -- navigate tabs with leader #
-for i = 1, 9 do
-	table.insert(config.keys, {
-		key = tostring(i),
-		mods = "LEADER",
-		action = act.ActivateTab(i - 1),
-	})
-end
+-- for i = 1, 9 do
+-- 	table.insert(config.keys, {
+-- 		key = tostring(i),
+-- 		mods = "LEADER",
+-- 		action = act.ActivateTab(i - 1),
+-- 	})
+-- end
 
 -- Move panes with backtick, m, then arrows
-config.key_tables = {
-	resize_pane = {
-		{ key = "LeftArrow", action = act.AdjustPaneSize({ "Left", 1 }) },
-		{ key = "DownArrow", action = act.AdjustPaneSize({ "Down", 1 }) },
-		{ key = "UpArrow", action = act.AdjustPaneSize({ "Up", 1 }) },
-		{ key = "RightArrow", action = act.AdjustPaneSize({ "Right", 1 }) },
-		{ key = "Escape", action = "PopKeyTable" },
-		{ key = "Enter", action = "PopKeyTable" },
-	},
-	move_tab = {
-		{ key = "h", action = act.MoveTabRelative(-1) },
-		{ key = "j", action = act.MoveTabRelative(-1) },
-		{ key = "k", action = act.MoveTabRelative(1) },
-		{ key = "l", action = act.MoveTabRelative(1) },
-		{ key = "Escape", action = "PopKeyTable" },
-		{ key = "Enter", action = "PopKeyTable" },
-	},
-}
+-- config.key_tables = {
+-- 	resize_pane = {
+-- 		{ key = "LeftArrow", action = act.AdjustPaneSize({ "Left", 1 }) },
+-- 		{ key = "DownArrow", action = act.AdjustPaneSize({ "Down", 1 }) },
+-- 		{ key = "UpArrow", action = act.AdjustPaneSize({ "Up", 1 }) },
+-- 		{ key = "RightArrow", action = act.AdjustPaneSize({ "Right", 1 }) },
+-- 		{ key = "Escape", action = "PopKeyTable" },
+-- 		{ key = "Enter", action = "PopKeyTable" },
+-- 	},
+-- 	move_tab = {
+-- 		{ key = "h", action = act.MoveTabRelative(-1) },
+-- 		{ key = "j", action = act.MoveTabRelative(-1) },
+-- 		{ key = "k", action = act.MoveTabRelative(1) },
+-- 		{ key = "l", action = act.MoveTabRelative(1) },
+-- 		{ key = "Escape", action = "PopKeyTable" },
+-- 		{ key = "Enter", action = "PopKeyTable" },
+-- 	},
+-- }
 
 -- style changes
 config.use_fancy_tab_bar = false
