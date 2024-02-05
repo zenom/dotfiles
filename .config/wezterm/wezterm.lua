@@ -1,38 +1,39 @@
 -- Pull in the wezterm API
+require('tab_setup')
+require('layout')
 local wezterm = require("wezterm")
 local act = wezterm.action
 
--- This table will hold the configuration.
 local config = {}
 
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- For example, changing the color scheme:
 config.color_scheme = "catppuccin-macchiato"
-
 config.font = wezterm.font("MonoLisa Nerd Font")
 -- config.font = wezterm.font("Comic Code")
-config.font_size = 14
+config.font_size = 16
 config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.default_workspace = "pulse"
--- default_workspace?
--- AdjustPaneSize
 
 config.inactive_pane_hsb = {
 	saturation = 0.24,
 	brightness = 0.5,
 }
 
+config.window_padding = {
+	left = 1,
+	right = 1,
+	top = 1,
+	bottom = 1,
+}
+
 config.leader = { key = "`" }
 
 config.keys = {
-	-- This will create a new split and run your default program inside it
 	{ key = "-", mods = "LEADER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ key = "=", mods = "LEADER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "LeftArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Left") },

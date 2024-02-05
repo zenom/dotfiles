@@ -17,6 +17,7 @@ end
 set -gx HOMEBREW_REPOSITORY $($BREW_PATH --prefix)
 set -gx HOMEBREW_CELLAR "$HOMEBREW_REPOSITORY/Cellar";
 set -gx PATH "$HOME/.local/bin:$HOMEBREW_REPOSITORY/bin:$HOMEBREW_REPOSITORY/sbin$PATH+:$PATH";
+set -gx PATH "$HOME/.asdf:$PATH"
 set -gx MANPATH "$HOMEBREW_REPOSITORY/share/man$MANPATH+:$MANPATH:";
 set -gx INFOPATH "$HOMEBREW_REPOSITORY/share/info:$INFOPATH:-";
 set -gx XDG_CONFIG_HOME "$HOME/.config";
@@ -59,8 +60,11 @@ set -g fish_pager_color_description $comment
 set -g fish_pager_color_selected_background --background=$selection
 
 # setup asdf
-source $($BREW_PATH --prefix)/opt/asdf/libexec/asdf.fish
-# source ~/.asdf/asdf.fish
+# source $($BREW_PATH --prefix)/opt/asdf/libexec/asdf.fish
+
+if test -f $HOME/.asdf/asdf.fish
+  source $HOME/.asdf/asdf.fish
+end
 
 # starship
 starship init fish | source
