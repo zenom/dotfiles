@@ -1,6 +1,7 @@
 -- Pull in the wezterm API
 require('tab_setup')
 require('layout')
+
 local wezterm = require("wezterm")
 local act = wezterm.action
 
@@ -11,10 +12,10 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = "catppuccin-macchiato"
-config.font = wezterm.font("MonoLisa Nerd Font")
--- config.font = wezterm.font("Comic Code")
-config.font_size = 16
-config.window_background_opacity = 0.9
+-- config.font = wezterm.font("MonoLisa Nerd Font")
+config.font = wezterm.font("Comic Code")
+config.font_size = 17
+config.window_background_opacity = 1
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.default_workspace = "pulse"
@@ -22,6 +23,17 @@ config.default_workspace = "pulse"
 config.inactive_pane_hsb = {
 	saturation = 0.24,
 	brightness = 0.5,
+}
+
+config.window_background_gradient = {
+  orientation = 'Vertical',
+  colors = {
+    '#181926',
+    '#302b63',
+    '#1e2030',
+  },
+  interpolation = 'Linear',
+  blend = 'Rgb',
 }
 
 config.window_padding = {
@@ -117,8 +129,10 @@ config.key_tables = {
 }
 
 -- style changes
-config.use_fancy_tab_bar = false
+config.adjust_window_size_when_changing_font_size = false
+config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = true
+
 
 -- and finally, return the configuration to wezterm
 return config
